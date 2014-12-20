@@ -166,6 +166,13 @@
 				class="FlattrButton" width="110" height="20" frameborder="0" scrolling="no" border="0" marginheight="0" marginwidth="0" allowtransparency="true">
 				</iframe>
 			</check>
+
+			<check if="{{trim(@item.keywords)!=''}}">
+				<div class="well">Tags: 
+				<repeat group="{{(explode(',', @item.keywords))}}" value="{{@keyword}}"><a href="{{@BASEURL}}{{@feedattr.slug}}/tags/{{@keyword}}">{{@keyword}}</a> </repeat>
+				</div>
+			</check>
+
 			<div>
 			<repeat group="{{glob(@templatepath.'/episode/*.html')}}" value="{{@template}}">
 				<include href="{{'episode/'.basename(@template)}}"/>

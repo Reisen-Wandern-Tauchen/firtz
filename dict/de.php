@@ -3,6 +3,7 @@ return array(
 	'dict_subscribe'=>'Abonnieren',
 	'dict_pubdate'=>'{0,date}',
 	'dict_duration'=>'Dauer',
+	'dict_tagsearch' => 'Schlagwort-Suche',
 	'dict_showcomments'=>'Kommentare zeigen oder schreiben',
 	'dict_show_adn_thread'=>'Thread auf App.net anzeigen',
 	'dict_license'=>'Lizenz',
