@@ -51,7 +51,7 @@ e;a=++f)if(g=b[a],g===c)return a;return-1};w.g=function(b){return this.setMap(b)
 	  var oms = new OverlappingMarkerSpiderfier(map);
 	  <check if="{{@items}}">
 	  <repeat group="@items" value="@item" key="@key">
-	 	 <check if="{{@item.location.latitude!=0}}">
+	 	 <check if="{{isset(@item.location.latitude) && isset(@item.location.longitude)}}">
 			var myLatlng = new google.maps.LatLng({{@item.location.latitude}},{{@item.location.longitude}});
 	  		bounds.extend(myLatlng);
 			var marker{{@key}} = new google.maps.Marker({
@@ -79,7 +79,7 @@ e;a=++f)if(g=b[a],g===c)return a;return-1};w.g=function(b){return this.setMap(b)
 		 
 		oms.addMarker(marker{{@key}});
 		</check>
-		 </repeat>
+	  </repeat>
 		 
 		 </check>
 		oms.addListener('click', function(marker, event) {

@@ -20,10 +20,11 @@
 			$item['title'] = $prod->metadata->title;
 			$item['description'] = strip_tags($prod->metadata->subtitle);
 			$item['article'] = $prod->metadata->summary;
-			$item['location']['latitude'] = 0;                                         
-                        $item['location']['longitude'] = 0;
+			//$item['location']['latitude'] = '0';                                         
+                        //$item['location']['longitude'] = '0';
 			if (isset($prod->metadata->location)) {
-				if ($prod->metadata->location->latitude!='null' && $prod->metadata->location->longitude!='null') { 
+				//if ($prod->metadata->location->latitude!='null' && $prod->metadata->location->longitude!='null') {
+				if (isset($prod->metadata->location->latitude) && isset($prod->metadata->location->longitude)) { 
 					$item['location']['latitude'] = $prod->metadata->location->latitude;
 					$item['location']['longitude'] = $prod->metadata->location->longitude;
 				}
