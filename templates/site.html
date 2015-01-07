@@ -83,7 +83,9 @@
 			<repeat group="{{glob(@templatepath.'/header/*.html')}}" value="{{@template}}">
 				<include href="{{'header/'.basename(@template)}}"/>
 			</repeat>
-			
+			<form id="tagsearch" action="" method="get" onSubmit="if (document.getElementById('search_input').value != '') { document.getElementById('tagsearch').action = '/{{@feedattr.slug}}/tags/' + document.getElementById('search_input').value + '/'; return true; } alert('leere Sucheingabe'); false;">
+				<input type="search" id="search_input" />
+			</form>
 			
         </ul>
         <h3><a class="homebut" href="{{@BASEURL}}{{@feedattr.slug}}/show/"><img src="{{@feedattr.image}}" width=100 /></a></h3>
